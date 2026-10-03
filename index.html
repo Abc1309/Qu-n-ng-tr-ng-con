@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8b4513">
+  <meta name="description" content="Game quản lý Quán Ông Trường">
+  <title>Quán Ông Trường</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">GAME QUẢN LÝ QUÁN ĂN</div>
+        <h1>🍜 QUÁN ÔNG TRƯỜNG</h1>
+        <p>Bạn là chủ quán — nhận khách, nấu món, kiếm tiền và nâng cấp quán.</p>
+      </div>
+      <button id="resetBtn" class="small-btn danger">↻ Chơi lại</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat"><span>💰 Tiền</span><strong id="money">0đ</strong></div>
+      <div class="stat"><span>📈 Doanh thu</span><strong id="revenue">0đ</strong></div>
+      <div class="stat"><span>👥 Đã phục vụ</span><strong id="served">0</strong></div>
+      <div class="stat"><span>⭐ Đánh giá</span><strong id="rating">5.0</strong></div>
+    </section>
+
+    <main>
+      <section class="panel hero-panel">
+        <div>
+          <div class="section-label">TRẠNG THÁI QUÁN</div>
+          <h2 id="statusTitle">Quán đang chờ khách...</h2>
+          <p id="statusText">Bấm “Nhận khách” để bắt đầu ca bán hàng.</p>
+        </div>
+        <button id="newCustomerBtn" class="primary big-btn">👤 Nhận khách</button>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <div>
+            <div class="section-label">KHÁCH ĐANG CHỜ</div>
+            <h2>📋 Đơn hàng</h2>
+          </div>
+          <span id="queueCount" class="badge">0 đơn</span>
+        </div>
+        <div id="orders" class="orders"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <div>
+            <div class="section-label">THỰC ĐƠN</div>
+            <h2>🍽️ Các món đang bán</h2>
+          </div>
+        </div>
+        <div id="menu" class="menu-grid"></div>
+      </section>
+
+      <section class="two-col">
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <div class="section-label">KHO</div>
+              <h2>📦 Nguyên liệu</h2>
+            </div>
+          </div>
+          <div id="stockList" class="stock-list"></div>
+          <button id="restockBtn" class="secondary full-btn">🛒 Nhập nguyên liệu — 30.000đ</button>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <div class="section-label">PHÁT TRIỂN</div>
+              <h2>🏪 Nâng cấp quán</h2>
+            </div>
+          </div>
+          <div class="upgrade">
+            <div class="upgrade-icon">🔥</div>
+            <div class="upgrade-info">
+              <strong>Bếp nhanh hơn</strong>
+              <span>Cấp <b id="kitchenLevel">1</b> · giảm thời gian chế biến</span>
+            </div>
+            <button id="kitchenBtn" class="secondary">Nâng cấp</button>
+          </div>
+          <div class="upgrade">
+            <div class="upgrade-icon">🪑</div>
+            <div class="upgrade-info">
+              <strong>Thêm bàn</strong>
+              <span>Cấp <b id="tableLevel">1</b> · tăng số khách tối đa</span>
+            </div>
+            <button id="tableBtn" class="secondary">Nâng cấp</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <div>
+            <div class="section-label">MỤC TIÊU</div>
+            <h2>🏆 Thành tích</h2>
+          </div>
+        </div>
+        <div id="achievements" class="achievements"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <footer>Quán Ông Trường · Chạy hoàn toàn trên GitHub Pages · Không cần máy chủ</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
